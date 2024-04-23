@@ -1,6 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
+/**
+
+ * @returns {() => void} Function to navigate back.
+ */
 export function useMoveBack() {
   const navigate = useNavigate();
-  return () => navigate(-1);
+
+  const moveBack = () => {
+    navigate(-1); // Navigate back by one step in the history
+  };
+
+  return moveBack;
 }
